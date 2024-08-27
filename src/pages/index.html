@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="page custom-scrollbar">
+  <head>
+    @include('../components/head.html')
+  </head>
+  <body class="page__body">
+    <!-- @include('../components/preloader.html') -->
+    <div class="site-container">
+      @include('../components/header/header.html')
+      <main class="page__main" id="main">
+        <div>
+          @include('../components/hero/hero.html')
+          @include('../components/categories-section.html')
+          @include('../components/popular_product/products.html')
+        </div>
+      </main>
+      @include('../components/footer-section.html')
+    </div>
+    <!-- @include('../components/modal.html') -->
+    @include('../components/modal_quick_view.html')
+    <!-- <script src="../js/plugins/glightbox.min.js"></script>
+    <script src="../js/plugins/swiper-bundle.min.js"></script> -->
+    <script defer src="js/main.js"></script>
+  </body>
+</html>

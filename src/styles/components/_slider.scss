@@ -1,0 +1,192 @@
+/*
+    3. Slider css
+*/
+.hero__slider--items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  gap: 30px;
+  padding: 4rem 2rem;
+  @media only screen and (min-width: 576px) {
+    gap: 35px;
+    padding: 0 3rem;
+  }
+  @media only screen and (min-width: 768px) {
+    gap: 50px;
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  // @media only screen and (min-width: 1200px) {
+  //   height: 450px;
+  // }
+  // @media only screen and (min-width: 1366px) {
+  //   height: 450px;
+  // }
+  @media only screen and (min-width: 1600px) {
+  }
+  @media only screen and (max-width: 575px) {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+}
+.home1-slider1-bg {
+  background: url(../../img/banner/hero_bg.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+.hero__slider--ml {
+  @media only screen and (min-width: 992px) {
+    margin-left: 255px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 280px;
+  }
+}
+.slider__content {
+  position: relative;
+  z-index: 9;
+  @media only screen and (max-width: 575px) {
+    text-align: center;
+  }
+}
+.slider__subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--inter-fonts);
+  margin-bottom: 0.5rem;
+}
+
+.slider__maintitle {
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+  @media only screen and (min-width: 576px) {
+    margin-bottom: 1.8rem;
+  }
+  @media only screen and (min-width: 992px) {
+    margin-bottom: 2.2rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-bottom: 2.6rem;
+  }
+  &--inner__text {
+    font-family: var(--rubik-fonts);
+    font-weight: 400;
+    text-decoration: underline;
+    @media only screen and (min-width: 992px) {
+      font-size: 3.4rem;
+      line-height: 4rem;
+    }
+    @media only screen and (min-width: 1200px) {
+      font-size: 3.8rem;
+      line-height: 4.2rem;
+    }
+  }
+}
+
+.slider__price--text {
+  font-family: var(--inter-fonts);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  @media only screen and (min-width: 576px) {
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 2.6rem;
+    line-height: 2.8rem;
+    margin-bottom: 3rem;
+  }
+}
+.slider__btn {
+  & svg {
+    margin-left: 0.3rem;
+  }
+}
+.hero__slider--layer {
+  @media only screen and (max-width: 1199px) {
+    max-width: 385px;
+  }
+  @media only screen and (max-width: 991px) {
+    max-width: 360px;
+  }
+  @media only screen and (max-width: 767px) {
+    max-width: 290px;
+  }
+}
+
+.slider__layer--images {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  display: block;
+}
+.swiper-slide-active .slider__content > * {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.swiper-slide-active {
+  & .slider__subtitle {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+  & .slider__maintitle {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  & .slider__maintitle--style2 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  & .slider__desc {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+  & .slider__price--text {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+  & .slider__btn {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+  }
+  & .slider__layer--images {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: 1.4s;
+  }
+}
+
+.hero__slider--activation {
+  & .swiper__nav--btn.swiper-button-prev {
+    left: 1.5rem;
+  }
+  & .swiper__nav--btn.swiper-button-next {
+    right: 1.5rem;
+  }
+}
+
+/*
+    home two css here
+*/

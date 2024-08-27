@@ -1,0 +1,191 @@
+// * * * * * {
+//   outline: 3px solid orange;
+// }    /* debug offsets */
+
+.page {
+  height: 100%;
+  font-family: var(--font-family-base);
+  background-color: var(--color-light);
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  hyphens: auto;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100%;
+  font-size: 16px;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.scroll-lock {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+@supports (
+  scrollbar-color: var(--color-green, #02836f) var(--color-mint, #ffffff)
+) {
+  .custom-scrollbar {
+    scrollbar-color: var(--color-green, #02836f) var(--color-mint, #ffffff);
+    scrollbar-width: auto;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin-inline: auto;
+  width: min(var(--content-max-width), 100% - (var(--padding-inline) * 2));
+}
+
+.skiplink {
+  --skiplink-offset: 20px;
+  --skiplink-bg-color: var(--color-green, #02836f);
+  --skiplink-overlay-color: hsl(0, 0%, 0%);
+  --skiplink-flashing-color: hsl(0, 0%, 100%);
+  --skiplink-overlay-color-mix-a60: color-mix(
+    in srgb,
+    var(--skiplink-overlay-color),
+    transparent 40%
+  );
+  --skiplink-flashing-color-mix-a50: color-mix(
+    in srgb,
+    var(--skiplink-flashing-color),
+    transparent 50%
+  );
+  --skiplink-z-index: 900;
+
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--skiplink-offset);
+  font-weight: 400;
+  background-color: var(--skiplink-overlay-color-mix-a60, hsla(0, 0%, 0%, 0.6));
+  color: var(--color-dark);
+  z-index: var(--skiplink-z-index);
+  pointer-events: none;
+  transition: opacity var(--timing, 0.3s) ease,
+    background-color var(--timing, 0.3s) ease;
+
+  &__text {
+    @include pulse-btn-bg;
+
+    position: relative;
+    top: calc(var(--skiplink-offset) * 2);
+    left: var(--skiplink-offset);
+    padding: var(--skiplink-offset);
+    border-radius: var(--skiplink-offset);
+    background-color: var(--skiplink-bg-color);
+    color: var(--color-light, #fff);
+    border: 2px solid var(--color-light, #fff);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-btn-bg 1.5s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal
+      none running;
+    transition: box-shadow var(--timing, 0.3s);
+
+    &::before {
+      content: url(../img/skiplink-enter-icon.svg);
+      margin-left: var(--skiplink-offset);
+      order: 2;
+      width: var(--skiplink-offset);
+      height: var(--skiplink-offset);
+    }
+
+    &::after {
+      content: attr(data-title);
+      order: 3;
+      padding-top: 2px;
+      margin-left: 2px;
+    }
+  }
+
+  &:focus {
+    opacity: 1;
+
+    & .skiplink__text {
+      box-shadow: var(--skiplink-flashing-color-mix-a50, hsla(0, 0%, 100%, 0.5))
+        0px 0px 0px 0px;
+    }
+  }
+}
+
+.overlay {
+  @include lg {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--timing) ease, visibility var(--timing) ease;
+    z-index: 1;
+
+    &--active {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--overlay-shadow);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-dark);
+  text-stroke: 1px var(--color-dark);
+}
+
+.text-bg-gradient {
+  background: linear-gradient(90deg, rgb(158, 63, 58) 36%, rgb(52, 17, 142));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    &,
+    &::after,
+    &::before {
+      animation: none !important;
+      transition: 0.01s !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@media (prefers-contrast: more) {
+  .backdrop-title {
+    &::after {
+      -webkit-text-stroke: 10px var(--color-dark);
+      text-stroke: 10px var(--color-dark);
+    }
+  }
+}

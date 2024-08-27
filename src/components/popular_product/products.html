@@ -1,0 +1,20 @@
+<!-- Start product section -->
+<section class="product__section section--padding pt-0">
+  <div class="container">
+    <div
+      class="section__heading section__heading--flex border-bottom d-flex justify-content-between mb-30">
+      <h2 class="section__heading--maintitle">
+        Популярные
+        <span>товары</span>
+      </h2>
+      @include('./nav_tabs.html')
+    </div>
+    <div class="product__section--inner">
+      <div class="tab-content" id="nav-tabContent">
+        @include('bicycles.html') @include('accessories.html')
+        @include('parts.html') @include('moto.html') @include('scooter.html')
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End product section -->
