@@ -329,9 +329,14 @@
     & .header__search--widget.header__sticky--none {
       display: none !important;
     }
+    & .header__nav--widget {
+      display: block !important;
+    }
+    & .main__logo {
+      display: none !important;
+    }
   }
 }
-
 /*
    header topbar css here
 */
@@ -687,9 +692,10 @@
     }
   }
   &--btn {
+    color: var(--text-white-color);
     position: relative;
     &:hover {
-      color: var(--secondary-color);
+      color: var(--body-text-color);
     }
     & > * {
       pointer-events: none;
