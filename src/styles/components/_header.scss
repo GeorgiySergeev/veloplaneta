@@ -8,7 +8,8 @@
 
 .header__bg {
   // background: #f0f0f0;
-  background: #00559f;
+  // background: #00559f;
+  background-color: var(--color-anthracite);
 }
 .offcanvas__header--menu__open {
   line-height: 1;
@@ -335,15 +336,25 @@
     & .main__logo {
       display: none !important;
     }
+
+    & .header__account--btn {
+      color: var(--secondary-color);
+
+      &:hover {
+        color: var(--color-anthracite);
+      }
+    }
   }
 }
 /*
    header topbar css here
 */
 .header__topbar {
-  padding: 8px 0;
+  padding: 5px 0;
+  background-color: var(--color-anthracite);
+
   @media only screen and (min-width: 768px) {
-    padding: 10px 0;
+    padding: 1px 0;
   }
   &--inner {
     @media only screen and (max-width: 991px) {
@@ -376,7 +387,8 @@
   &--link {
     font-size: 1.2rem;
     font-weight: 500;
-    font-family: var(--inter-fonts);
+    font-family: var(--montserrat-font);
+
     line-height: 1.8rem;
     & svg {
       margin-right: 0.2rem;
@@ -695,7 +707,7 @@
     color: var(--text-white-color);
     position: relative;
     &:hover {
-      color: var(--body-text-color);
+      color: var(--secondary-color);
     }
     & > * {
       pointer-events: none;
@@ -765,19 +777,20 @@
     width: 100%;
   }
   &--header {
-    height: 42px;
+    width: 298px;
+    height: 50px;
     padding: 0 14px;
     cursor: pointer;
     position: relative;
-    @media only screen and (min-width: 768px) {
-      height: 50px;
-    }
-    @media only screen and (min-width: 992px) {
-      height: 55px;
-    }
-    @media only screen and (min-width: 1600px) {
-      height: 65px;
-    }
+    // @media only screen and (min-width: 768px) {
+    //   height: 50px;
+    // }
+    // @media only screen and (min-width: 992px) {
+    //   height: 55px;
+    // }
+    // @media only screen and (min-width: 1600px) {
+    //   height: 65px;
+    // }
     &.active {
       & .categories__arrowdown--icon {
         transform: rotate(180deg);
@@ -1044,6 +1057,11 @@
   }
   &--wrapper {
     gap: 1.3rem;
+    padding: 5px 10px;
+    background: var(--secondary-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
     @media only screen and (min-width: 1200px) {
       gap: 2rem;
     }
@@ -1059,8 +1077,8 @@
     }
     &:hover {
       & .header__menu--link {
-        color: var(--secondary-color) !important;
-        border-color: var(--secondary-color);
+        color: var(--color-anthracite) !important;
+        // border-color: var(--secondary-color);
       }
       & .header__sub--menu {
         visibility: visible;
@@ -1075,9 +1093,9 @@
     }
   }
   &--link {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 3.5rem;
-    padding: 0 0.8rem;
+    // padding: 0 0.8rem;
     font-weight: 600;
     border: 1px solid transparent;
     border-radius: 2rem;
@@ -1087,7 +1105,7 @@
       content: '';
       width: 1px;
       height: 1.7rem;
-      background: #cccccc;
+      background: #222121;
       right: -11px;
       top: 50%;
       transform: translatey(-50%);
@@ -1099,7 +1117,7 @@
     }
     @media only screen and (min-width: 1200px) {
       font-size: 1.5rem;
-      padding: 0 1.2rem;
+      // padding: 0 1.2rem;
     }
   }
 }

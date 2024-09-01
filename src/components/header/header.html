@@ -1,12 +1,9 @@
 <!-- Start header area -->
 <header class="header__section">
-  <div class="header__topbar border-bottom">
-    <div class="container-fluid">
-      <!-- top bar -->
-      @include('top_bar.html')
-      <!-- end of top bar -->
-    </div>
-  </div>
+  <!-- top bar -->
+  @include('header_top.html')
+  <!-- end of top bar -->
+
   <div class="main__header header__sticky header__bg">
     <div class="container">
       <div
@@ -36,7 +33,7 @@
             <a class="main__logo--link" href="index.html">
               <img
                 class="main__logo--img"
-                src="../../img/logo/logo-text-white.png"
+                src="../../img/logo/logo-orange.png"
                 alt="logo-img"
                 width="362"
                 height="55" />
@@ -131,6 +128,7 @@
       </div>
     </div>
   </div>
+  @include('header_button.html')
   <!-- Start Offcanvas header menu -->
   @include('./offcanvas_header_menu.html')
   <!-- End Offcanvas header menu -->

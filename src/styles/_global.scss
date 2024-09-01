@@ -3,12 +3,19 @@
 */
 
 :root {
-  --primary-color: #212121;
-  // --secondary-color: #1dabed;
-  --secondary-color: #00559f;
+  --primary-color: rgb(33, 33, 33);
+  --color-trust-section: rgb(28, 171, 237);
+  // --secondary-color: #00559f;
+  --secondary-color: rgba(255, 95, 0, 1);
   --foreground-color: #121416;
   --foreground-sub-color: #898686;
-  --body-text-color: #000000;
+  --body-text-color: rgba(34, 34, 34, 1);
+
+  --color-anthracite: rgba(34, 34, 34, 1);
+  --color-orange: rgba(255, 95, 0, 1);
+  --color-orange-dark: rgba(230, 86, 0);
+  --color-orange-darker: rgba(204, 76, 0);
+
   --text-white-color: #fff;
   --body-background-color: #fff;
   --bg-offwhite-color: #f7f7f7;
@@ -18,6 +25,7 @@
   --open-sans-fonts: 'Open Sans', sans-serif;
   --rubik-fonts: 'Rubik', sans-serif;
   --inter-fonts: 'Inter', sans-serif;
+  --montserrat-fonts: 'Montserrat', sans-serif;
   --body-font-size: 1.5rem;
   --body-font-weight: 400;
   --body-line-height: 2.8rem;
@@ -45,7 +53,7 @@ body {
 }
 
 body {
-  font-family: var(--open-sans-fonts);
+  font-family: var(--montserrat-fonts);
   font-size: var(--body-font-size, 1.5rem);
   font-weight: var(--body-font-weight);
   font-style: normal;
@@ -180,7 +188,7 @@ p,
 .p {
   margin-top: 0;
   // margin-bottom: 1rem;
-  font-family: var(--inter-fonts);
+  // font-family: var(--inter-fonts);
   @media only screen and (min-width: 1200px) {
     // margin-bottom: 1.5rem;
   }
@@ -1121,10 +1129,22 @@ body.overlay__active::before,
   margin-right: 3rem;
 }
 
+.mr-15 {
+  margin-right: 1.5rem;
+}
+
 .mr-auto {
   margin-right: auto;
 }
 
 .ml-auto {
   margin-left: auto;
+}
+
+// table mod
+
+.tab-d-none {
+  @media only screen and (max-width: 992px) {
+    display: none !important;
+  }
 }
