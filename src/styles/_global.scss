@@ -6,7 +6,8 @@
   --primary-color: rgb(33, 33, 33);
   --color-trust-section: rgb(28, 171, 237);
   // --secondary-color: #00559f;
-  --secondary-color: rgba(255, 95, 0, 1);
+  --secondary-color: #176188;
+  // --secondary-color: rgba(255, 95, 0, 1);
   --foreground-color: #121416;
   --foreground-sub-color: #898686;
   --body-text-color: rgba(34, 34, 34, 1);
@@ -310,7 +311,7 @@ hr {
 }
 @media only screen and (min-width: 1366px) {
   .container {
-    max-width: 1240px;
+    max-width: 1280px;
   }
 }
 
@@ -973,6 +974,16 @@ body.overlay__active::before,
 .mb-0 {
   margin-bottom: 0;
 }
+
+.me-28 {
+  margin-bottom: 2rem;
+  @media only screen and (min-width: 992px) {
+    margin-right: 2.3rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-right: 2.8rem;
+  }
+}
 .mb-60 {
   margin-bottom: 3.5rem;
   @media only screen and (min-width: 768px) {
@@ -1147,4 +1158,8 @@ body.overlay__active::before,
   @media only screen and (max-width: 992px) {
     display: none !important;
   }
+}
+
+.material-icons {
+  color: var(--foreground-sub-color);
 }

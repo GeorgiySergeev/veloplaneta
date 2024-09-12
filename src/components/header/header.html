@@ -1,11 +1,11 @@
 <!-- Start header area -->
-<header class="header__section">
-  <!-- top bar -->
-  @include('header_top.html')
-  <!-- end of top bar -->
+<header class="header__section header__bg">
+  <div class="container">
+    <!-- top bar -->
+    @include('header_top.html')
+    <!-- end of top bar -->
 
-  <div class="main__header header__sticky header__bg">
-    <div class="container">
+    <div class="main__header header__sticky header__bg">
       <div
         class="main__header--inner position__relative d-flex justify-content-between align-items-center">
         <div class="offcanvas__header--menu__open">
@@ -33,7 +33,7 @@
             <a class="main__logo--link" href="index.html">
               <img
                 class="main__logo--img"
-                src="../../img/logo/logo-orange.png"
+                src="../../img/logo/logo-text-white.png"
                 alt="logo-img"
                 width="362"
                 height="55" />
@@ -127,19 +127,19 @@
         </div>
       </div>
     </div>
+    @include('header_button.html')
+    <!-- Start Offcanvas header menu -->
+    @include('./offcanvas_header_menu.html')
+    <!-- End Offcanvas header menu -->
+
+    <!-- Start Offcanvas stikcy toolbar -->
+    @include('./offcanvas_toolbar.html')
+    <!-- End Offcanvas stikcy toolbar -->
+
+    <!-- Start offCanvas minicart -->
+    @include('./offcanvas_minicart.html')
+
+    <!-- End offCanvas minicart -->
   </div>
-  @include('header_button.html')
-  <!-- Start Offcanvas header menu -->
-  @include('./offcanvas_header_menu.html')
-  <!-- End Offcanvas header menu -->
-
-  <!-- Start Offcanvas stikcy toolbar -->
-  @include('./offcanvas_toolbar.html')
-  <!-- End Offcanvas stikcy toolbar -->
-
-  <!-- Start offCanvas minicart -->
-  @include('./offcanvas_minicart.html')
-
-  <!-- End offCanvas minicart -->
 </header>
 <!-- End header area -->

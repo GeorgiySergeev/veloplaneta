@@ -38,6 +38,7 @@
 // import Swiper from 'swiper'
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle'
+import { throttle } from '../js/functions/throttle.js'
 
 // import styles bundle
 // import 'swiper/css/bundle'
@@ -118,6 +119,7 @@ function TopOffset(el) {
 // Header sticky activation
 const headerStickyWrapper = document.querySelector('header')
 const headerStickyTarget = document.querySelector('.header__sticky')
+const headerInnerSticky = document.querySelector('.main__header--inner')
 
 if (headerStickyTarget) {
   let headerHeight = headerStickyWrapper.clientHeight
@@ -125,10 +127,14 @@ if (headerStickyTarget) {
     let StickyTargetElement = TopOffset(headerStickyWrapper)
     let TargetElementTopOffset = StickyTargetElement.top
 
-    if (window.scrollY > TargetElementTopOffset) {
+    console.log(TargetElementTopOffset)
+
+    if (window.scrollY > TargetElementTopOffset + headerHeight * 2) {
       headerStickyTarget.classList.add('sticky')
+      headerInnerSticky.classList.add('container')
     } else {
       headerStickyTarget.classList.remove('sticky')
+      headerInnerSticky.classList.remove('container')
     }
   })
 }

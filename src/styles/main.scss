@@ -1,7 +1,7 @@
 @import 'mixins';
 // @import 'reset';
 // @import 'base-variables';
-// @import 'colors-variables';
+@import 'colors-variables';
 // @import 'offset-system-variables';
 // @import 'fonts';
 // @import 'settings';
@@ -13,8 +13,8 @@
 // @import 'bootstrap/scss/bootstrap';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
-// Components
 @import 'global';
+// Components
 
 @import './components/header';
 @import './components/slider';
