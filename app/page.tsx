@@ -5,19 +5,20 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import Popular from '@/components/Popular';
+import CategoryShowcase from '@/components/CategoryShowcase';
 
 function MainComponent() {
-  // const [products, setProducts] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+    // const [products, setProducts] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
 
-  return (
-    <div className="min-h-screen bg-white w-full">
-      <Header />
-      <Hero />
-      <Popular />
-
-      {/* <section className="py-16 bg-white">
+    return (
+        <div className="min-h-screen bg-white w-full">
+            <Header />
+            <Hero />
+            <Popular />
+            <CategoryShowcase />
+            {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center text-gray-900 font-inter">
             Contact Us
@@ -41,9 +42,9 @@ function MainComponent() {
           </div>
         </div>
       </section> */}
-      <Footer />
-    </div>
-  );
+            <Footer />
+        </div>
+    );
 }
 
 export default MainComponent;
